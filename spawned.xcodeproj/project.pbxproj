@@ -12,6 +12,10 @@
 		4F46251D1DFEFA3F00C7A822 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F46251B1DFEFA3F00C7A822 /* Main.storyboard */; };
 		4F46251F1DFEFA3F00C7A822 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F46251E1DFEFA3F00C7A822 /* Assets.xcassets */; };
 		4F4625221DFEFA3F00C7A822 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F4625201DFEFA3F00C7A822 /* LaunchScreen.storyboard */; };
+		4FE0F3011DFF521D00A66452 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0F3001DFF521D00A66452 /* User.swift */; };
+		4FE0F3031DFF5CEF00A66452 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0F3021DFF5CEF00A66452 /* Game.swift */; };
+		4FE0F30B1DFF5F1000A66452 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0F30A1DFF5F1000A66452 /* APIHandler.swift */; };
+		4FE0F3131DFF6C6C00A66452 /* UIColorFromRGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0F3121DFF6C6C00A66452 /* UIColorFromRGBA.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		4F46251E1DFEFA3F00C7A822 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4F4625211DFEFA3F00C7A822 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4F4625231DFEFA3F00C7A822 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FE0F3001DFF521D00A66452 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = classes/Model/User.swift; sourceTree = "<group>"; };
+		4FE0F3021DFF5CEF00A66452 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Game.swift; path = classes/Model/Game.swift; sourceTree = "<group>"; };
+		4FE0F30A1DFF5F1000A66452 /* APIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
+		4FE0F3121DFF6C6C00A66452 /* UIColorFromRGBA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorFromRGBA.swift; path = ../../ParisLuteceIOS/ParisLutece/classes/Helpers/UIColorFromRGBA.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,66 @@
 		4F4625161DFEFA3E00C7A822 /* spawned */ = {
 			isa = PBXGroup;
 			children = (
-				4F4625171DFEFA3F00C7A822 /* AppDelegate.swift */,
-				4F4625191DFEFA3F00C7A822 /* ViewController.swift */,
+				4FE0F3041DFF5E2900A66452 /* classes */,
 				4F46251B1DFEFA3F00C7A822 /* Main.storyboard */,
 				4F46251E1DFEFA3F00C7A822 /* Assets.xcassets */,
 				4F4625201DFEFA3F00C7A822 /* LaunchScreen.storyboard */,
 				4F4625231DFEFA3F00C7A822 /* Info.plist */,
 			);
 			path = spawned;
+			sourceTree = "<group>";
+		};
+		4FE0F3041DFF5E2900A66452 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				4F4625171DFEFA3F00C7A822 /* AppDelegate.swift */,
+				4FE0F3091DFF5EDF00A66452 /* Cells */,
+				4FE0F3051DFF5E3500A66452 /* Model */,
+				4FE0F3061DFF5E4600A66452 /* NetWork */,
+				4FE0F3081DFF5E9700A66452 /* ViewControllers */,
+				4FE0F3071DFF5E5800A66452 /* Helpers */,
+			);
+			name = classes;
+			sourceTree = "<group>";
+		};
+		4FE0F3051DFF5E3500A66452 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4FE0F3001DFF521D00A66452 /* User.swift */,
+				4FE0F3021DFF5CEF00A66452 /* Game.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4FE0F3061DFF5E4600A66452 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				4FE0F30A1DFF5F1000A66452 /* APIHandler.swift */,
+			);
+			name = NetWork;
+			sourceTree = "<group>";
+		};
+		4FE0F3071DFF5E5800A66452 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4FE0F3121DFF6C6C00A66452 /* UIColorFromRGBA.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		4FE0F3081DFF5E9700A66452 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4F4625191DFEFA3F00C7A822 /* ViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4FE0F3091DFF5EDF00A66452 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +198,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F46251A1DFEFA3F00C7A822 /* ViewController.swift in Sources */,
+				4FE0F3131DFF6C6C00A66452 /* UIColorFromRGBA.swift in Sources */,
 				4F4625181DFEFA3F00C7A822 /* AppDelegate.swift in Sources */,
+				4FE0F30B1DFF5F1000A66452 /* APIHandler.swift in Sources */,
+				4FE0F3011DFF521D00A66452 /* User.swift in Sources */,
+				4FE0F3031DFF5CEF00A66452 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +364,7 @@
 				4F4625281DFEFA3F00C7A822 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
