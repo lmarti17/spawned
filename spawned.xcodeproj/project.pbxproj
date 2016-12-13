@@ -13,6 +13,7 @@
 		4F4625221DFEFA3F00C7A822 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F4625201DFEFA3F00C7A822 /* LaunchScreen.storyboard */; };
 		4FBD54131DFFFB0600D62BE2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD54121DFFFB0600D62BE2 /* SignUpViewController.swift */; };
 		4FBD54151E0000EF00D62BE2 /* Assetes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FBD54141E0000EF00D62BE2 /* Assetes.xcassets */; };
+		4FBD54171E006DA700D62BE2 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD54161E006DA700D62BE2 /* SignInViewController.swift */; };
 		4FE0F3011DFF521D00A66452 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0F3001DFF521D00A66452 /* User.swift */; };
 		4FE0F3031DFF5CEF00A66452 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0F3021DFF5CEF00A66452 /* Game.swift */; };
 		4FE0F30B1DFF5F1000A66452 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0F30A1DFF5F1000A66452 /* APIHandler.swift */; };
@@ -28,6 +29,7 @@
 		4F4625231DFEFA3F00C7A822 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FBD54121DFFFB0600D62BE2 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		4FBD54141E0000EF00D62BE2 /* Assetes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assetes.xcassets; sourceTree = "<group>"; };
+		4FBD54161E006DA700D62BE2 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		4FE0F3001DFF521D00A66452 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = classes/Model/User.swift; sourceTree = "<group>"; };
 		4FE0F3021DFF5CEF00A66452 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Game.swift; path = classes/Model/Game.swift; sourceTree = "<group>"; };
 		4FE0F30A1DFF5F1000A66452 /* APIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			children = (
 				4F4625191DFEFA3F00C7A822 /* ViewController.swift */,
 				4FBD54121DFFFB0600D62BE2 /* SignUpViewController.swift */,
+				4FBD54161E006DA700D62BE2 /* SignInViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				4FBD54131DFFFB0600D62BE2 /* SignUpViewController.swift in Sources */,
 				4FE0F3131DFF6C6C00A66452 /* UIColorFromRGBA.swift in Sources */,
 				4F4625181DFEFA3F00C7A822 /* AppDelegate.swift in Sources */,
+				4FBD54171E006DA700D62BE2 /* SignInViewController.swift in Sources */,
 				4FE0F30B1DFF5F1000A66452 /* APIHandler.swift in Sources */,
 				4FE0F3011DFF521D00A66452 /* User.swift in Sources */,
 				4FE0F3031DFF5CEF00A66452 /* Game.swift in Sources */,
