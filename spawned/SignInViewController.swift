@@ -10,6 +10,12 @@ import UIKit
 
 class SignInViewController: UIViewController {
 
+    
+    @IBOutlet weak var loginTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,14 +28,25 @@ class SignInViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        // MARK: - Action method
+    @IBAction func login(_ sender: Any) {
+        
+                self.performSegue(withIdentifier: SearchGameViewController.segue_identifier, sender: nil)
+        
+//        if let login = usernameTextField.text,
+//            let password = passwordTextField.text {
+//            
+//            if !login.isEmpty && !password.isEmpty {
+//                let alertController = UIAlertController(title: "Connexion", message: "Vous êtes connecté", preferredStyle: .alert)
+//               
+//                self.present(alertController, animated: true, completion: nil)
+//            }
+//            
+//        }
+//        
+//        
+//        
+//    }
     }
-    */
-
 }

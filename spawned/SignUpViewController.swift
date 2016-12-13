@@ -9,6 +9,22 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
+    
+    
+    
+    // MARK: - Form data
+    
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var dateOfBirthTextField: UITextField!
+    @IBOutlet weak var genderTextField: UITextField!
+    @IBOutlet weak var countryTextField: UITextField!
+    @IBOutlet weak var microBooleanValue: UISwitch!
+    @IBOutlet weak var mailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var verificationPasswordTextField: UITextField!
+
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +38,8 @@ class SignUpViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
+    @IBAction func signUp(_ sender: Any) {
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
 
 }

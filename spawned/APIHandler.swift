@@ -18,5 +18,9 @@ struct APIHandler {
         private static let apiKey =  "DsYyhnvNwp7YSndP"
 
     
+    static var postLogin: String {
+        return baseUrl
+    }
+    
     
 }

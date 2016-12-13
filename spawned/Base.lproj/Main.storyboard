@@ -125,7 +125,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GtL-AO-1eg" id="Uid-TY-ZYB">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LISTE DES JOUEURS EN FONCTION DU JEU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4e8-fK-Ilo">
@@ -166,10 +166,10 @@
             </objects>
             <point key="canvasLocation" x="-283" y="742"/>
         </scene>
-        <!--View Controller-->
+        <!--Search Game View Controller-->
         <scene sceneID="WhX-RD-va6">
             <objects>
-                <viewController id="85v-fS-5CE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="searchGame_viewcontroller_identifier" id="85v-fS-5CE" customClass="SearchGameViewController" customModule="spawned" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ty3-YC-teQ"/>
                         <viewControllerLayoutGuide type="bottom" id="qLB-zM-2xt"/>
@@ -302,10 +302,10 @@
             </objects>
             <point key="canvasLocation" x="713" y="780"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign In View Controller-->
         <scene sceneID="83N-hr-0p6">
             <objects>
-                <viewController id="qat-EE-OQP" sceneMemberID="viewController">
+                <viewController id="qat-EE-OQP" customClass="SignInViewController" customModule="spawned" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SYk-vJ-vim"/>
                         <viewControllerLayoutGuide type="bottom" id="IUw-Cf-T4h"/>
@@ -320,6 +320,21 @@
                                     <constraint firstAttribute="height" constant="285" id="jZS-Zi-fM8"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RB2-QY-iCZ">
+                                <rect key="frame" x="101" y="302" width="118" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="HUT-5c-uvH"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="etT-rU-aPg">
+                                <rect key="frame" x="16" y="363" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="HX4-1B-FWu"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="45K-pd-UZG">
                                 <rect key="frame" x="16" y="408" width="288" height="30"/>
                                 <constraints>
@@ -339,24 +354,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="85v-fS-5CE" kind="show" id="Wm6-2f-2Q0"/>
+                                    <action selector="login:" destination="qat-EE-OQP" eventType="touchUpInside" id="MEb-Gz-ufH"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RB2-QY-iCZ">
-                                <rect key="frame" x="101" y="302" width="118" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="27" id="HUT-5c-uvH"/>
-                                </constraints>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="etT-rU-aPg">
-                                <rect key="frame" x="16" y="363" width="288" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="HX4-1B-FWu"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -378,6 +378,11 @@
                             <constraint firstItem="45K-pd-UZG" firstAttribute="centerX" secondItem="mbI-AY-7sU" secondAttribute="centerX" id="r7E-wz-w6B"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginTextField" destination="etT-rU-aPg" id="2Y5-fD-qYD"/>
+                        <outlet property="passwordTextField" destination="45K-pd-UZG" id="EhO-Qe-UL4"/>
+                        <segue destination="85v-fS-5CE" kind="show" identifier="searchGame_viewcontroller_identifier" id="b3G-hN-DJW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="msb-rw-aUu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -408,7 +413,7 @@
                                             <color key="titleColor" red="0.59999999999999998" green="0.0" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="qat-EE-OQP" kind="show" id="gWk-cH-V92"/>
+                                            <segue destination="qat-EE-OQP" kind="show" id="Hni-GM-HQl"/>
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j60-fi-MmI">
@@ -464,11 +469,10 @@
             </objects>
             <point key="canvasLocation" x="-2156.25" y="-2.112676056338028"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="UWO-4M-Xer">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zme-Gc-1mf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="RFp-RB-mKb" sceneMemberID="viewController">
+                <viewController id="RFp-RB-mKb" customClass="SignUpViewController" customModule="spawned" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Etp-2r-jXT"/>
                         <viewControllerLayoutGuide type="bottom" id="RLQ-BB-kzf"/>
@@ -571,6 +575,9 @@
                                     <constraint firstAttribute="height" constant="50" id="ITZ-sN-LsC"/>
                                 </constraints>
                                 <state key="normal" title="SIGN UP"/>
+                                <connections>
+                                    <action selector="signUp:" destination="RFp-RB-mKb" eventType="touchUpInside" id="6G6-wo-9UH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -606,7 +613,20 @@
                             <constraint firstItem="VZl-tx-c79" firstAttribute="leading" secondItem="g7i-xt-83U" secondAttribute="leading" constant="20" id="xdP-F1-Jnh"/>
                         </constraints>
                     </scrollView>
+                    <connections>
+                        <outlet property="countryTextField" destination="8cF-Sp-x2S" id="XeF-a2-K6R"/>
+                        <outlet property="dateOfBirthTextField" destination="RV6-PP-BPz" id="zCY-4p-XRv"/>
+                        <outlet property="genderTextField" destination="2zb-cm-0gz" id="mOT-wd-taI"/>
+                        <outlet property="mailTextField" destination="DSc-s0-7xG" id="rXO-rG-g9i"/>
+                        <outlet property="microBooleanValue" destination="Ybe-74-Jpt" id="A1Y-id-0dV"/>
+                        <outlet property="nameTextField" destination="gyU-ad-08i" id="LVp-8H-Fya"/>
+                        <outlet property="passwordTextField" destination="6B2-Ww-e2c" id="USj-es-wrV"/>
+                        <outlet property="signUp" destination="Br7-Bh-c61" id="DSJ-vj-5K5"/>
+                        <outlet property="verificationPasswordTextField" destination="SzZ-6Y-gQn" id="HeT-Tb-CrZ"/>
+                        <segue destination="VnA-lx-r6L" kind="show" identifier="profile_viewcontroller_identifier" id="BMn-Ac-B7B"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zme-Gc-1mf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1324" y="-1"/>
         </scene>
@@ -638,7 +658,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e9B-6g-onO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="7F5-Cr-aWg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="7F5-Cr-aWg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -658,6 +678,6 @@
         <image name="menu-search" width="38" height="38"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Wm6-2f-2Q0"/>
+        <segue reference="b3G-hN-DJW"/>
     </inferredMetricsTieBreakers>
 </document>
