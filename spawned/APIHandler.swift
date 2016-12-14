@@ -57,12 +57,17 @@ struct APIHandler {
             "password": password
         ]
         
+        print("Parameters:\(params)")
+        print("Url:\(urlString)")
+        
         Alamofire.request(urlString, method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).validate().responseJSON { (response) in
             
             switch response.result {
             case .success(let value):
                 let jsonData = JSON(value)
                 print(jsonData)
+                
+                return
                 
                 
             case .failure(let error):
@@ -80,9 +85,15 @@ struct APIHandler {
     static func signUp(param: [String: Any], success: @escaping ((JSON) -> Void), failure: @escaping ((String) -> Void)) {
     
         let url = baseUrl + Path.signUp.description
+        
+        print(url)
+        
+        print(param)
         let params = param
         
-        Alamofire.request(url, method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).validate().responseJSON { (response) in
+        Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+            
+            print(response.request)
             
             switch response.result {
             case .success(let value):

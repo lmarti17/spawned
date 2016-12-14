@@ -10,13 +10,11 @@ import UIKit
 
 class SignUpViewController: UITableViewController {
     
-    // MARK: - Form data
-    
-    
+    // MARK: - Outlets
     
     @IBOutlet weak var userNameTextField: UITextField!
-    @IBOutlet weak var dateOfBirthTextField: UITextField!
     @IBOutlet weak var genderTextField: UITextField!
+    @IBOutlet weak var dateOfBirthTextField: UITextField!
     @IBOutlet weak var countryTextField: UITextField!
     @IBOutlet weak var microBooleanValue: UISwitch!
     @IBOutlet weak var mailTextField: UITextField!
@@ -36,16 +34,47 @@ class SignUpViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+//    func datePickerValueChanged(sender:UIDatePicker) {
+//        
+//        let dateFormatter = NSDate
+//        
+//        dateFormatter.dateStyle = CFDateFormatterStyle.MediumStyle
+//        
+//        dateFormatter.timeStyle = CFDateFormatterStyle.NoStyle
+//        
+//        dateOfBirthTextField.text = dateFormatter.stringFromDate(from: sender.date)
+//        
+//    }
+    
+    // MARK: - Set birthday Date Picker
+    
+//    @IBAction func birthdayTextField(_ sender: UITextField) {
+//        
+//        let datePickerView:UIDatePicker = UIDatePicker()
+//        
+//        datePickerView.datePickerMode = UIDatePickerMode.date
+//        
+//        sender.inputView = datePickerView
+//        
+//        datePickerView.addTarget(self, action: #selector(self.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
+//    }
+    
+    
+
+    
+    
+    // MARK: - Sign Up event
 
     @IBAction func signUp(_ sender: Any) {
         
         let password: String?
-        let micStatus: Bool!
+        let micStatus: String!
         
         if microBooleanValue.isOn {
-            micStatus = true
+            micStatus = "yes"
         } else {
-            micStatus = false
+            micStatus = "no"
         }
         
         if passwordTextField.text == verificationPasswordTextField.text {

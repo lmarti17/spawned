@@ -24,7 +24,6 @@ class SignInViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
 
     // MARK: - Action method
