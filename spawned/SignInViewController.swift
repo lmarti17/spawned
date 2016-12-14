@@ -32,21 +32,26 @@ class SignInViewController: UIViewController {
         // MARK: - Action method
     @IBAction func login(_ sender: Any) {
         
-                self.performSegue(withIdentifier: SearchGameViewController.segue_identifier, sender: nil)
+//
         
-//        if let login = usernameTextField.text,
-//            let password = passwordTextField.text {
-//            
-//            if !login.isEmpty && !password.isEmpty {
-//                let alertController = UIAlertController(title: "Connexion", message: "Vous êtes connecté", preferredStyle: .alert)
-//               
-//                self.present(alertController, animated: true, completion: nil)
-//            }
-//            
-//        }
-//        
-//        
-//        
-//    }
+        if let login = loginTextField.text,
+            let password = passwordTextField.text {
+            
+            if !login.isEmpty && !password.isEmpty {
+                
+                // CALL to the API
+                let result = APIHandler.signIn(name: login, password: password)
+
+                if !result.isEmpty {
+                    self.performSegue(withIdentifier: SearchGameViewController.segue_identifier, sender: nil)
+                }
+               
+            }
+            
+        }
+        
+        
+        
     }
 }
+

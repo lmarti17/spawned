@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "6063F8E83AA7E07AA85E882189D037A88B12FD89",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6063F8E83AA7E07AA85E882189D037A88B12FD89" : 9223372036854775807,
+    "9BB070D5580F4FF52250314FEE8DC1B215BEFB64" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "CD413EE2-BE9E-4CE4-818E-E570B748073F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6063F8E83AA7E07AA85E882189D037A88B12FD89" : "spawned\/",
+    "9BB070D5580F4FF52250314FEE8DC1B215BEFB64" : "ParisLuteceIOS\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "spawned",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "spawned.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:lmarti17\/spawned.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6063F8E83AA7E07AA85E882189D037A88B12FD89"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:lmarti17\/ParisLuteceIOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9BB070D5580F4FF52250314FEE8DC1B215BEFB64"
+    }
+  ]
+}

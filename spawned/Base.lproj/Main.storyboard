@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="e9B-6g-onO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="e9B-6g-onO">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="5Gk-Wm-d7z">
             <objects>
-                <viewController id="Qe4-L7-Q48" sceneMemberID="viewController">
+                <viewController id="Qe4-L7-Q48" customClass="profileViewController" customModule="spawned" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pq3-OX-by5"/>
                         <viewControllerLayoutGuide type="bottom" id="ziT-gc-q15"/>
@@ -117,7 +117,7 @@
             <objects>
                 <tableViewController id="WIV-li-ari" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Upo-So-2Ph">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -175,14 +175,14 @@
                         <viewControllerLayoutGuide type="bottom" id="qLB-zM-2xt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SuO-YJ-Taf">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="421" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="akG-Ow-YOX">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="Iz1-fP-0Wm">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
+                                    <rect key="frame" x="0.0" y="64" width="320" height="56"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <searchBar contentMode="redraw" placeholder="Search a game" translatesAutoresizingMaskIntoConstraints="NO" id="oec-Re-USx">
@@ -295,7 +295,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Qe4-L7-Q48" kind="show" id="vKS-X2-jVh"/>
+                        <segue destination="Qe4-L7-Q48" kind="show" identifier="profile_viewcontroller_identifier" id="vKS-X2-jVh"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fL6-fP-GQ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -381,7 +381,6 @@
                     <connections>
                         <outlet property="loginTextField" destination="etT-rU-aPg" id="2Y5-fD-qYD"/>
                         <outlet property="passwordTextField" destination="45K-pd-UZG" id="EhO-Qe-UL4"/>
-                        <segue destination="85v-fS-5CE" kind="show" identifier="searchGame_viewcontroller_identifier" id="b3G-hN-DJW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="msb-rw-aUu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -621,9 +620,8 @@
                         <outlet property="microBooleanValue" destination="Ybe-74-Jpt" id="A1Y-id-0dV"/>
                         <outlet property="nameTextField" destination="gyU-ad-08i" id="LVp-8H-Fya"/>
                         <outlet property="passwordTextField" destination="6B2-Ww-e2c" id="USj-es-wrV"/>
-                        <outlet property="signUp" destination="Br7-Bh-c61" id="DSJ-vj-5K5"/>
                         <outlet property="verificationPasswordTextField" destination="SzZ-6Y-gQn" id="HeT-Tb-CrZ"/>
-                        <segue destination="VnA-lx-r6L" kind="show" identifier="profile_viewcontroller_identifier" id="BMn-Ac-B7B"/>
+                        <segue destination="VnA-lx-r6L" kind="show" identifier="" id="BMn-Ac-B7B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zme-Gc-1mf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -677,7 +675,4 @@
         <image name="game" width="374" height="487"/>
         <image name="menu-search" width="38" height="38"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="b3G-hN-DJW"/>
-    </inferredMetricsTieBreakers>
 </document>
