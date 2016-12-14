@@ -8,11 +8,13 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UITableViewController {
     
     // MARK: - Form data
-
-    @IBOutlet weak var nameTextField: UITextField!
+    
+    
+    
+    @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var dateOfBirthTextField: UITextField!
     @IBOutlet weak var genderTextField: UITextField!
     @IBOutlet weak var countryTextField: UITextField!
@@ -55,7 +57,7 @@ class SignUpViewController: UIViewController {
         
         // CALL the API
         
-        if let userName = nameTextField.text, let gender = genderTextField.text,
+        if let userName = userNameTextField.text, let gender = genderTextField.text,
             let country = countryTextField.text ,let email = mailTextField.text {
             
             let params = [
@@ -74,6 +76,8 @@ class SignUpViewController: UIViewController {
                 param: params,
                 success: { (response) in
                     print(response)
+//                    self.performSegue(withIdentifier: "show_profile_identifer", sender: <#T##Any?#>)
+
                 }, failure: { (error) in
                     print(error)
                 }

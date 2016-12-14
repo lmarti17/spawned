@@ -63,6 +63,8 @@ struct APIHandler {
             case .success(let value):
                 let jsonData = JSON(value)
                 print(jsonData)
+                
+                
             case .failure(let error):
                 print(error.localizedDescription.description)
             }
