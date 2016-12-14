@@ -6,27 +6,19 @@
 //  Copyright © 2016 untstudio. All rights reserved.
 //
 
-import Foundation
+import SwiftyJSON
 
 class User {
     
     
     var username: String!
-    
     var email: String!
-    
     var password: String!
-    
     var sex: Bool!
-    
     var birthday: NSDate!
-    
     var country: String!
-    
     var bio: String!
-    
     var mic: Bool!
-    
     var avatar: String!
     
     

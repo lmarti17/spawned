@@ -10,11 +10,8 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
-    
-    
     // MARK: - Form data
-    
-    
+
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var dateOfBirthTextField: UITextField!
     @IBOutlet weak var genderTextField: UITextField!
@@ -40,7 +37,53 @@ class SignUpViewController: UIViewController {
 
     @IBAction func signUp(_ sender: Any) {
         
+        let password: String?
+        let micStatus: Bool!
+        
+        if microBooleanValue.isOn {
+            micStatus = true
+        } else {
+            micStatus = false
+        }
+        
+        if passwordTextField.text == verificationPasswordTextField.text {
+            password = passwordTextField.text
+        } else {
+            print("Erreur")
+            return
+        }
+        
         // CALL the API
+        
+        if let userName = nameTextField.text, let gender = genderTextField.text,
+            let country = countryTextField.text ,let email = mailTextField.text {
+            
+            let params = [
+                "username": userName,
+                "email": email,
+                "password": password!,
+                "password_confirmation": password!,
+                "sex": gender,
+                "mic": micStatus,
+                "birthday": "14/12/2016",
+                "country": country,
+                "register_secret": APIHandler.apiKey
+                ] as [String : Any]
+            
+            APIHandler.signUp(
+                param: params,
+                success: { (response) in
+                    print(response)
+                }, failure: { (error) in
+                    print(error)
+                }
+            )
+            
+        } else {
+            print("Error")
+        }
+        
+        
 
     }
 

@@ -16,6 +16,8 @@
 		4FBD54131DFFFB0600D62BE2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD54121DFFFB0600D62BE2 /* SignUpViewController.swift */; };
 		4FBD54151E0000EF00D62BE2 /* Assetes.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FBD54141E0000EF00D62BE2 /* Assetes.xcassets */; };
 		4FBD54171E006DA700D62BE2 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD54161E006DA700D62BE2 /* SignInViewController.swift */; };
+		4FCAA2F01E01508A00B56178 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCAA2EF1E01508A00B56178 /* Helper.swift */; };
+		4FCAA2F31E01553500B56178 /* SearchGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCAA2F21E01553500B56178 /* SearchGameCell.swift */; };
 		4FE0F3011DFF521D00A66452 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0F3001DFF521D00A66452 /* User.swift */; };
 		4FE0F3031DFF5CEF00A66452 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0F3021DFF5CEF00A66452 /* Game.swift */; };
 		4FE0F30B1DFF5F1000A66452 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0F30A1DFF5F1000A66452 /* APIHandler.swift */; };
@@ -37,6 +39,8 @@
 		4FBD54121DFFFB0600D62BE2 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		4FBD54141E0000EF00D62BE2 /* Assetes.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assetes.xcassets; sourceTree = "<group>"; };
 		4FBD54161E006DA700D62BE2 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		4FCAA2EF1E01508A00B56178 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		4FCAA2F21E01553500B56178 /* SearchGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchGameCell.swift; path = classes/Cells/CollectionViewCell/SearchGameCell.swift; sourceTree = "<group>"; };
 		4FE0F3001DFF521D00A66452 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = classes/Model/User.swift; sourceTree = "<group>"; };
 		4FE0F3021DFF5CEF00A66452 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Game.swift; path = classes/Model/Game.swift; sourceTree = "<group>"; };
 		4FE0F30A1DFF5F1000A66452 /* APIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
@@ -95,6 +99,14 @@
 			path = spawned;
 			sourceTree = "<group>";
 		};
+		4FCAA2F11E0154F700B56178 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4FCAA2F21E01553500B56178 /* SearchGameCell.swift */,
+			);
+			name = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		4FD818E56BB3E509C95ACBBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				4FE0F3121DFF6C6C00A66452 /* UIColorFromRGBA.swift */,
+				4FCAA2EF1E01508A00B56178 /* Helper.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -156,6 +169,7 @@
 		4FE0F3091DFF5EDF00A66452 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				4FCAA2F11E0154F700B56178 /* CollectionViewCell */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -284,12 +298,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FCAA2F01E01508A00B56178 /* Helper.swift in Sources */,
 				4F57236D1E00A2220022925D /* SearchGameViewController.swift in Sources */,
 				4F46251A1DFEFA3F00C7A822 /* ViewController.swift in Sources */,
 				4FBD54131DFFFB0600D62BE2 /* SignUpViewController.swift in Sources */,
 				4FE0F3131DFF6C6C00A66452 /* UIColorFromRGBA.swift in Sources */,
 				4F4625181DFEFA3F00C7A822 /* AppDelegate.swift in Sources */,
 				4FBD54171E006DA700D62BE2 /* SignInViewController.swift in Sources */,
+				4FCAA2F31E01553500B56178 /* SearchGameCell.swift in Sources */,
 				4FE0F30B1DFF5F1000A66452 /* APIHandler.swift in Sources */,
 				4FE0F3011DFF521D00A66452 /* User.swift in Sources */,
 				4FACB7C81E00B2E3002AC92E /* ProfileViewController.swift in Sources */,

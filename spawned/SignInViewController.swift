@@ -8,12 +8,10 @@
 
 import UIKit
 
-class SignInViewController: UIViewController {
-
+class SignInViewController: UITableViewController {
     
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
     
     
     override func viewDidLoad() {
@@ -29,29 +27,18 @@ class SignInViewController: UIViewController {
     
 
 
-        // MARK: - Action method
-    @IBAction func login(_ sender: Any) {
+    // MARK: - Action method
+
+    
+    @IBAction func signIn(_ sender: Any) {
         
-//
-        
-        if let login = loginTextField.text,
-            let password = passwordTextField.text {
+        if let login = loginTextField.text, let password = passwordTextField.text {
             
             if !login.isEmpty && !password.isEmpty {
-                
-                // CALL to the API
-                let result = APIHandler.signIn(name: login, password: password)
-
-                if !result.isEmpty {
-                    self.performSegue(withIdentifier: SearchGameViewController.segue_identifier, sender: nil)
-                }
-               
+                APIHandler.signIn(name: login, password: password)
             }
             
         }
-        
-        
-        
     }
 }
 
