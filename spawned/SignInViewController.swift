@@ -25,16 +25,28 @@ class SignInViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    // MARK: - Variables method
+    
+    var response: Bool!
+    
+    
 
     // MARK: - Action method
 
     
     @IBAction func signIn(_ sender: Any) {
         
+        
         if let login = loginTextField.text, let password = passwordTextField.text {
             
             if !login.isEmpty && !password.isEmpty {
+                
                 APIHandler.signIn(name: login, password: password)
+                
+//                self.performSegue(withIdentifier: ProfileViewController.segue_identifier , sender: <#T##Any?#>)
+                
+                
             }
             
         }

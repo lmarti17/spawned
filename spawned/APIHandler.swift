@@ -25,16 +25,31 @@ struct APIHandler {
         
         // post Sign UP
         case signUp
+        
         // post Sign In
         case signIn
         
-        case profile(id: Int)
+        // Get Profile data
+        case profile
+        
+        // Get Profile games
+        case profileGames
+        
+        // Get list of games
+        case searchGames
         
         var description: String {
             switch self {
                 case .signIn(): return "login"
+                
                 case .signUp(): return "register"
-                case .profile(let id): return "\(id)"
+                
+                case .profile(): return "me"
+                
+                case .profileGames(): return "me/games"
+                
+                default: return ""
+                
             }
         }
         
@@ -51,6 +66,7 @@ struct APIHandler {
         // Set url to reach
         let urlString = baseUrl + Path.signIn.description
         
+        
         // Params
         let params = [
             "username": name,
@@ -66,17 +82,32 @@ struct APIHandler {
             case .success(let value):
                 let jsonData = JSON(value)
                 print(jsonData)
-                
-                return
+                print("ÇA MARCHE")
                 
                 
             case .failure(let error):
                 print(error.localizedDescription.description)
+                print("ÇA MARCHE PAS")
+                
+//                let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.alert)
+//                alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+//                self.present(alert, animated: true, completion: nil)
+                
+                return
+                
+                
+
             }
             
         }
+        
 
     }
+    
+    
+    
+    
+    
     
     ////////////////////////
     // MARK: - SIGNUP Event
@@ -99,6 +130,8 @@ struct APIHandler {
             case .success(let value):
                 let jsonData = JSON(value)
                 success(jsonData)
+                
+                
             case .failure(let error):
                 failure(error.localizedDescription.description)
             }
@@ -107,4 +140,67 @@ struct APIHandler {
         
     }
     
+    
+    
+    
+    
+    /////////////////////////////
+    // MARK: - Profile get Data
+    /////////////////////////////
+    
+    
+    static func getProfile(userToken: String) {
+        
+        var url = baseUrl + Path.profile.description
+        
+        
+        let headers = [
+            "Authorization": userToken
+        ]
+        
+        
+        // CALL TO GET PROFILE DATA
+        Alamofire.request(url, headers: headers).validate().responseJSON {
+            (response) in
+            
+            print(response.request)
+            
+            switch response.result {
+            case .success(let value):
+                let jsonData = JSON(value)
+                print(jsonData)
+                
+                
+            case .failure(let error):
+                print(error)
+                return
+            }
+            
+        }
+        
+        // CALL TO GET PROFILE GAMES
+        
+        url = baseUrl + Path.profileGames.description
+        
+        Alamofire.request(url, headers: headers).validate().responseJSON {
+            (response) in
+            
+            
+            switch response.result {
+            case .success(let value):
+                let jsonData = JSON(value)
+                print(jsonData)
+                
+                
+            case .failure(let error):
+                print(error)
+                return
+            }
+            
+            
+        }
+        
+    }
+    
+
 }

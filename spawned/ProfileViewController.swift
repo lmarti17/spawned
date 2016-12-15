@@ -11,27 +11,34 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     static let segue_identifier = "profile_viewcontroller_identifier"
+    
+    // MARK: - OUTLETS
+    
+    
+    @IBOutlet weak var userImg: UIImageView!
+    
+    @IBOutlet weak var gender: UILabel!
+    
+    @IBOutlet weak var Age: UILabel!
+    
+    @IBOutlet weak var microStatus: UILabel!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.getData()
         // Do any additional setup after loading the view.
     }
+    
+    
+    private func getData() {
+        
+        let userToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE0ODQzNTY3Nzl9.2oZZCFeolHNuCQIyV1MZYzxUjuJ4GyrX-sfSeNuWXuI"
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        APIHandler.getProfile(userToken: userToken)
+
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
