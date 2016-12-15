@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 class ProfileViewController: UIViewController {
     
@@ -57,6 +58,9 @@ class ProfileViewController: UIViewController {
                 self.country.text = response["country"].string
                 self.userName.text = response["username"].string
                 self.age.text = response["age"].string
+                
+                let userAvatar = response["avatar_thumb"].string
+                Nuke.loadImage(with: URL(string: userAvatar!)!, into: self.userImage)
         
         }, failure:{ (error) in
             

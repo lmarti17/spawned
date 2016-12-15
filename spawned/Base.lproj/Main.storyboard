@@ -109,7 +109,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xbd-88-uQf" userLabel="Avatar">
                                             <rect key="frame" x="120" y="105" width="80" height="80"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user-default-avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Q5L-lo-cgK">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q5L-lo-cgK">
                                                     <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                 </imageView>
                                             </subviews>
@@ -802,7 +802,6 @@
         <image name="bg-generic" width="641" height="1136"/>
         <image name="icon-upload" width="165" height="165"/>
         <image name="menu-search" width="38" height="38"/>
-        <image name="user-default-avatar" width="165" height="165"/>
         <image name="user-default-background" width="1280" height="2302"/>
     </resources>
     <inferredMetricsTieBreakers>
