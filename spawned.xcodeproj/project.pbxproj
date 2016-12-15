@@ -22,6 +22,7 @@
 		4FE0F3031DFF5CEF00A66452 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0F3021DFF5CEF00A66452 /* Game.swift */; };
 		4FE0F30B1DFF5F1000A66452 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0F30A1DFF5F1000A66452 /* APIHandler.swift */; };
 		4FE0F3131DFF6C6C00A66452 /* UIColorFromRGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0F3121DFF6C6C00A66452 /* UIColorFromRGBA.swift */; };
+		4FF07D321E034E95002AFFDE /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF07D311E034E95002AFFDE /* LandingViewController.swift */; };
 		BD7C41611E150E24411DED1E /* Pods_spawned.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA88C262740510F47EB5C5E /* Pods_spawned.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		4FE0F3021DFF5CEF00A66452 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Game.swift; path = classes/Model/Game.swift; sourceTree = "<group>"; };
 		4FE0F30A1DFF5F1000A66452 /* APIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		4FE0F3121DFF6C6C00A66452 /* UIColorFromRGBA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorFromRGBA.swift; path = ../../ParisLuteceIOS/ParisLutece/classes/Helpers/UIColorFromRGBA.swift; sourceTree = "<group>"; };
+		4FF07D311E034E95002AFFDE /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		9039AC479379DB256C53E564 /* Pods-spawned.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spawned.debug.xcconfig"; path = "Pods/Target Support Files/Pods-spawned/Pods-spawned.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,6 +164,7 @@
 				4FBD54161E006DA700D62BE2 /* SignInViewController.swift */,
 				4F57236C1E00A2220022925D /* SearchGameViewController.swift */,
 				4FACB7C71E00B2E3002AC92E /* ProfileViewController.swift */,
+				4FF07D311E034E95002AFFDE /* LandingViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				4FE0F30B1DFF5F1000A66452 /* APIHandler.swift in Sources */,
 				4FE0F3011DFF521D00A66452 /* User.swift in Sources */,
 				4FACB7C81E00B2E3002AC92E /* ProfileViewController.swift in Sources */,
+				4FF07D321E034E95002AFFDE /* LandingViewController.swift in Sources */,
 				4FE0F3031DFF5CEF00A66452 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

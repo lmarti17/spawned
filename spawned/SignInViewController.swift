@@ -48,19 +48,29 @@ class SignInViewController: UITableViewController {
                     success: { (response) in
                         
                         // register token in app
+                        let defaults = UserDefaults.standard
+                        defaults.set(response["access_token"].string, forKey: "access_token")
                         
-                        UserDefaults.standard.setValue(response["user_token"].string, forKey: "user_token")
+                        print(defaults.string(forKey: "access_token"))
                         
+                        // Switch to profile view
                         self.performSegue(withIdentifier: ProfileViewController.segue_identifier, sender: nil)
                         
                     }, failure: { (error) in
 
-                        let alert = UIAlertController(title: "Erreur", message: "Message", preferredStyle: UIAlertControllerStyle.alert)
-                        alert.addAction(UIAlertAction(title: "", style: UIAlertActionStyle.default, handler: nil))
+                        // Handle error
+                        let alert = UIAlertController(title: "Error", message: "The login/password combination must be wrong", preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "Try again", style: UIAlertActionStyle.default, handler: nil))
                         self.present(alert, animated: true, completion: nil)
                     }
                 )
 
+            } else {
+                
+                // Handle error
+                let alert = UIAlertController(title: "Error", message: "All fields must be filled", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Try again", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
             
         }

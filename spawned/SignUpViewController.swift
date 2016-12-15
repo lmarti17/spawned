@@ -13,11 +13,11 @@ class SignUpViewController: UITableViewController {
     // MARK: - Outlets
     
     @IBOutlet weak var userNameTextField: UITextField!
-    @IBOutlet weak var genderTextField: UITextField!
     @IBOutlet weak var dateOfBirthTextField: UITextField!
+    @IBOutlet weak var genderTextField: UITextField!
     @IBOutlet weak var countryTextField: UITextField!
-    @IBOutlet weak var microBooleanValue: UISwitch!
     @IBOutlet weak var mailTextField: UITextField!
+    @IBOutlet weak var microBooleanValue: UISwitch!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var verificationPasswordTextField: UITextField!
 
@@ -64,7 +64,7 @@ class SignUpViewController: UITableViewController {
 
     
     
-    // MARK: - Sign Up event
+    // MARK: - Sign Up
 
     @IBAction func signUp(_ sender: Any) {
         
@@ -80,7 +80,11 @@ class SignUpViewController: UITableViewController {
         if passwordTextField.text == verificationPasswordTextField.text {
             password = passwordTextField.text
         } else {
-            print("Erreur")
+            
+            // Handle error
+            let alert = UIAlertController(title: "Error", message: "Passwords don't match", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Try again", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
             return
         }
         
@@ -88,38 +92,42 @@ class SignUpViewController: UITableViewController {
         
         if let userName = userNameTextField.text, let gender = genderTextField.text,
             let country = countryTextField.text ,let email = mailTextField.text {
-            
-            let params = [
-                "username": userName,
-                "email": email,
-                "password": password!,
-                "password_confirmation": password!,
-                "sex": gender,
-                "mic": micStatus,
-                "birthday": "14/12/2016",
-                "country": country,
-                "register_secret": APIHandler.apiKey
-                ] as [String : Any]
-            
-            APIHandler.signUp(
-                param: params,
-                success: { (response) in
-                    print(response)
-                    
-                    UserDefaults.standard.setValue(response["user_token"].string, forKey: "user_token")
-
-                     self.performSegue(withIdentifier: ProfileViewController.segue_identifier, sender: nil)
-
+                
+                
+                let params = [
+                    "username": userName,
+                    "email": email,
+                    "password": password!,
+                    "password_confirmation": password!,
+                    "sex": gender.lowercased(),
+                    "mic": micStatus,
+                    "birthday": "14-12-2016",
+                    "country": country,
+                    "register_secret": APIHandler.apiKey
+                    ] as [String : Any]
+                
+                print(params)
+                
+                APIHandler.signUp(
+                    param: params,
+                    success: { (response) in
+                        print(response)
+                        
+                        // register token in app
+                        let defaults = UserDefaults.standard
+                        defaults.set(response["access_token"].string, forKey: "access_token")
+                        
+                        self.performSegue(withIdentifier: ProfileViewController.segue_identifier, sender: nil)
+                        
                 }, failure: { (error) in
+                    
                     print(error)
-                }
-            )
-            
-        } else {
-            print("Error")
-        }
-        
-        
+                    // Handle error
+                    let alert = UIAlertController(title: "Error", message: "An error with the server has occured", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Try again", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                })
+            }
 
     }
 

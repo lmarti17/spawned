@@ -42,16 +42,14 @@ class ProfileViewController: UIViewController {
     private func getData() {
         
         
-//        let userToken =  UserDefaults.standard.value(forKey: "user_token") as! String
+        let defaults =  UserDefaults.standard
+        let userToken: String!
+        userToken = defaults.string(forKey: "access_token")
         
-//        print(userToken)
-        let userToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE0ODQzNTY3Nzl9.2oZZCFeolHNuCQIyV1MZYzxUjuJ4GyrX-sfSeNuWXuI"
 
         APIHandler.getProfile(
             userToken: userToken,
             success:{ (response) in
-        
-                print("RESPONSE:\(response)")
                 
                 self.gender.text = response["sex"].string
                 self.microStatus.text = response["mic"].string

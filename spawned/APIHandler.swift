@@ -78,8 +78,6 @@ struct APIHandler {
             "password": password
         ]
         
-        print("Parameters:\(params)")
-        print("Url:\(urlString)")
         
         Alamofire.request(urlString, method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).validate().responseJSON { (response) in
             
@@ -112,23 +110,42 @@ struct APIHandler {
 
         let params = param
         
-        Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+        print(params)
+        
+        Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default).validate().responseJSON {
+            (reponse) in
             
-            switch response.result {
-            case .success(let value):
-
+            switch reponse.result {
+                case .success(let value):
+                
                 let jsonData = JSON(value)
-                print("JSONDATA: \(jsonData)")
+                    print(jsonData)
+                    success(jsonData)
                 
-                success(jsonData)
+                case .failure(let error):
+                    failure(error.localizedDescription.description)
                 
-                
-                
-            case .failure(let error):
-                failure(error.localizedDescription.description)
             }
-            
         }
+        
+//        Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default).validate().responseJSON {
+//            (response) in
+//            
+//            switch response.result {
+//            case .success(let value):
+//
+//                let jsonData = JSON(value)
+//                print("JSONDATA: \(jsonData)")
+//                
+//                success(jsonData)
+//                
+//                
+//                
+//            case .failure(let error):
+//                failure(error.localizedDescription.description)
+//            }
+//            
+//        }
         
     }
     
