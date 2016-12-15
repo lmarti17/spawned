@@ -12,12 +12,20 @@ class SearchGameViewController: UIViewController, UICollectionViewDataSource, UI
     
     static let segue_identifier = "searchGame_viewcontroller_identifier"
     
+    // MARK: - Outlets
+    
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    // MARK: - Class variables
+    
     
     // MARK: Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.getData()
+
         setupCollectionView()
     }
     
@@ -33,6 +41,13 @@ class SearchGameViewController: UIViewController, UICollectionViewDataSource, UI
     }
 
     // MARK: API HAndler
+    
+    private func getData() {
+        
+        let userToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE0ODQzNTY3Nzl9.2oZZCFeolHNuCQIyV1MZYzxUjuJ4GyrX-sfSeNuWXuI"
+            
+        APIHandler.searchGames(userToken: userToken)
+    }
     
 
     // MARK: - UICollectionView DataSrouce

@@ -42,11 +42,25 @@ class SignInViewController: UITableViewController {
             
             if !login.isEmpty && !password.isEmpty {
                 
-                APIHandler.signIn(name: login, password: password)
-                
-//                self.performSegue(withIdentifier: ProfileViewController.segue_identifier , sender: <#T##Any?#>)
-                
-                
+                APIHandler.signIn(
+                    name: login,
+                    password: password,
+                    success: { (response) in
+                        
+                        // register token in app
+                        
+                        UserDefaults.standard.setValue(response["user_token"].string, forKey: "user_token")
+                        
+                        self.performSegue(withIdentifier: ProfileViewController.segue_identifier, sender: nil)
+                        
+                    }, failure: { (error) in
+
+                        let alert = UIAlertController(title: "Erreur", message: "Message", preferredStyle: UIAlertControllerStyle.alert)
+                        alert.addAction(UIAlertAction(title: "", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                )
+
             }
             
         }

@@ -19,7 +19,10 @@ struct APIHandler {
     
     static var mic: String!
     
+    
+    ////////////////////////
     // MARK: - Routes API
+    ////////////////////////
     
     private enum Path: CustomStringConvertible {
         
@@ -48,6 +51,8 @@ struct APIHandler {
                 
                 case .profileGames(): return "me/games"
                 
+                case .searchGames(): return "games"
+                
                 default: return ""
                 
             }
@@ -61,7 +66,7 @@ struct APIHandler {
     // MARK: - SIGNIN Event
     ////////////////////////
     
-    static func signIn(name: String, password: String) {
+    static func signIn(name: String, password: String, success: @escaping ((JSON) -> Void), failure: @escaping ((String) -> Void)) {
         
         // Set url to reach
         let urlString = baseUrl + Path.signIn.description
@@ -81,21 +86,9 @@ struct APIHandler {
             switch response.result {
             case .success(let value):
                 let jsonData = JSON(value)
-                print(jsonData)
-                print("ÇA MARCHE")
-                
-                
+                success(jsonData)
             case .failure(let error):
-                print(error.localizedDescription.description)
-                print("ÇA MARCHE PAS")
-                
-//                let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.alert)
-//                alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
-//                self.present(alert, animated: true, completion: nil)
-                
-                return
-                
-                
+                failure(error.localizedDescription.description)
 
             }
             
@@ -116,20 +109,19 @@ struct APIHandler {
     static func signUp(param: [String: Any], success: @escaping ((JSON) -> Void), failure: @escaping ((String) -> Void)) {
     
         let url = baseUrl + Path.signUp.description
-        
-        print(url)
-        
-        print(param)
+
         let params = param
         
         Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
             
-            print(response.request)
-            
             switch response.result {
             case .success(let value):
+
                 let jsonData = JSON(value)
+                print("JSONDATA: \(jsonData)")
+                
                 success(jsonData)
+                
                 
                 
             case .failure(let error):
@@ -149,9 +141,12 @@ struct APIHandler {
     /////////////////////////////
     
     
-    static func getProfile(userToken: String) {
+    static func getProfile(userToken: String, success: @escaping ((JSON) -> Void), failure: @escaping ((String) -> Void)) {
         
         var url = baseUrl + Path.profile.description
+        
+
+//        let returnedData = JSON
         
         
         let headers = [
@@ -163,24 +158,58 @@ struct APIHandler {
         Alamofire.request(url, headers: headers).validate().responseJSON {
             (response) in
             
-            print(response.request)
-            
             switch response.result {
-            case .success(let value):
-                let jsonData = JSON(value)
-                print(jsonData)
+                case .success(let value):
+                    let jsonData = JSON(value)
+
+                    success(jsonData)
                 
-                
-            case .failure(let error):
-                print(error)
-                return
+                case .failure(let error):
+                    failure(error.localizedDescription.description)
             }
             
         }
         
         // CALL TO GET PROFILE GAMES
         
-        url = baseUrl + Path.profileGames.description
+//        url = baseUrl + Path.profileGames.description
+//        
+//        Alamofire.request(url, headers: headers).validate().responseJSON {
+//            (response) in
+//            
+//            
+//            switch response.result {
+//            case .success(let value):
+//                let jsonData = JSON(value)
+//                print(jsonData)
+//                
+//                
+//            case .failure(let error):
+//                print(error)
+//                return
+//            }
+//            
+//            
+//        }
+        
+    }
+    
+    
+    
+    
+    
+    /////////////////////////////
+    // MARK: - Get games
+    /////////////////////////////
+    
+    static func searchGames(userToken: String) {
+        
+        let url = baseUrl + Path.searchGames.description
+        
+        
+        let headers = [
+            "Authorization": userToken
+        ]
         
         Alamofire.request(url, headers: headers).validate().responseJSON {
             (response) in
@@ -196,10 +225,7 @@ struct APIHandler {
                 print(error)
                 return
             }
-            
-            
         }
-        
     }
     
 

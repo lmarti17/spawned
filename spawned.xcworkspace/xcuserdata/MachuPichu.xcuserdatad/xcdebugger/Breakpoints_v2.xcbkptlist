@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "spawned/APIHandler.swift"
-            timestampString = "503460885.952374"
+            timestampString = "503512980.305137"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "signUp(param:success:failure:)"
             landmarkType = "7">
             <Locations>

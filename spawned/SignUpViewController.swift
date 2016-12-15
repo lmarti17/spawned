@@ -105,7 +105,10 @@ class SignUpViewController: UITableViewController {
                 param: params,
                 success: { (response) in
                     print(response)
-//                    self.performSegue(withIdentifier: "show_profile_identifer", sender: <#T##Any?#>)
+                    
+                    UserDefaults.standard.setValue(response["user_token"].string, forKey: "user_token")
+
+                     self.performSegue(withIdentifier: ProfileViewController.segue_identifier, sender: nil)
 
                 }, failure: { (error) in
                     print(error)

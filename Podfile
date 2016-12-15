@@ -9,5 +9,6 @@ target 'spawned' do
 
 	pod 'Alamofire', '~> 4.2'
 	pod 'SwiftyJSON', '~> 3.1'
+    pod 'Nuke', '~> 4.1'
 
 end
