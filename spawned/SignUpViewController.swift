@@ -117,7 +117,7 @@ class SignUpViewController: UITableViewController {
                         let defaults = UserDefaults.standard
                         defaults.set(response["access_token"].string, forKey: "access_token")
                         
-                        self.performSegue(withIdentifier: ProfileViewController.segue_identifier, sender: nil)
+                        self.performSegue(withIdentifier: "tabbarController_identifier", sender: nil)
                         
                 }, failure: { (error) in
                     

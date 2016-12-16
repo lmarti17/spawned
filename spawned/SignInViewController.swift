@@ -54,7 +54,7 @@ class SignInViewController: UITableViewController {
                         print(defaults.string(forKey: "access_token"))
                         
                         // Switch to profile view
-                        self.performSegue(withIdentifier: ProfileViewController.segue_identifier, sender: nil)
+                        self.performSegue(withIdentifier: "tabbarController_identifier", sender: nil)
                         
                     }, failure: { (error) in
 

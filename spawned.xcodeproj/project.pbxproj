@@ -23,6 +23,15 @@
 		4FE0F30B1DFF5F1000A66452 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0F30A1DFF5F1000A66452 /* APIHandler.swift */; };
 		4FE0F3131DFF6C6C00A66452 /* UIColorFromRGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE0F3121DFF6C6C00A66452 /* UIColorFromRGBA.swift */; };
 		4FF07D321E034E95002AFFDE /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF07D311E034E95002AFFDE /* LandingViewController.swift */; };
+		4FF07D3D1E03602C002AFFDE /* SF-UI-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF07D341E035FF9002AFFDE /* SF-UI-Display-Black.otf */; };
+		4FF07D3E1E03602C002AFFDE /* SF-UI-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF07D351E035FF9002AFFDE /* SF-UI-Display-Bold.otf */; };
+		4FF07D3F1E03602C002AFFDE /* SF-UI-Display-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF07D361E035FF9002AFFDE /* SF-UI-Display-Heavy.otf */; };
+		4FF07D401E03602C002AFFDE /* SF-UI-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF07D371E035FF9002AFFDE /* SF-UI-Display-Light.otf */; };
+		4FF07D411E03602C002AFFDE /* SF-UI-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF07D381E035FF9002AFFDE /* SF-UI-Display-Medium.otf */; };
+		4FF07D421E03602C002AFFDE /* SF-UI-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF07D391E035FF9002AFFDE /* SF-UI-Display-Regular.otf */; };
+		4FF07D431E03602C002AFFDE /* SF-UI-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF07D3A1E035FF9002AFFDE /* SF-UI-Display-Semibold.otf */; };
+		4FF07D441E03602C002AFFDE /* SF-UI-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF07D3B1E035FF9002AFFDE /* SF-UI-Display-Thin.otf */; };
+		4FF07D451E03602C002AFFDE /* SF-UI-Display-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4FF07D3C1E035FF9002AFFDE /* SF-UI-Display-Ultralight.otf */; };
 		BD7C41611E150E24411DED1E /* Pods_spawned.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA88C262740510F47EB5C5E /* Pods_spawned.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +56,15 @@
 		4FE0F30A1DFF5F1000A66452 /* APIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		4FE0F3121DFF6C6C00A66452 /* UIColorFromRGBA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorFromRGBA.swift; path = ../../ParisLuteceIOS/ParisLutece/classes/Helpers/UIColorFromRGBA.swift; sourceTree = "<group>"; };
 		4FF07D311E034E95002AFFDE /* LandingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		4FF07D341E035FF9002AFFDE /* SF-UI-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Display-Black.otf"; path = "../../../Downloads/SF-UI/SF-UI-Display-Black.otf"; sourceTree = "<group>"; };
+		4FF07D351E035FF9002AFFDE /* SF-UI-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Display-Bold.otf"; path = "../../../Downloads/SF-UI/SF-UI-Display-Bold.otf"; sourceTree = "<group>"; };
+		4FF07D361E035FF9002AFFDE /* SF-UI-Display-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Display-Heavy.otf"; path = "../../../Downloads/SF-UI/SF-UI-Display-Heavy.otf"; sourceTree = "<group>"; };
+		4FF07D371E035FF9002AFFDE /* SF-UI-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Display-Light.otf"; path = "../../../Downloads/SF-UI/SF-UI-Display-Light.otf"; sourceTree = "<group>"; };
+		4FF07D381E035FF9002AFFDE /* SF-UI-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Display-Medium.otf"; path = "../../../Downloads/SF-UI/SF-UI-Display-Medium.otf"; sourceTree = "<group>"; };
+		4FF07D391E035FF9002AFFDE /* SF-UI-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Display-Regular.otf"; path = "../../../Downloads/SF-UI/SF-UI-Display-Regular.otf"; sourceTree = "<group>"; };
+		4FF07D3A1E035FF9002AFFDE /* SF-UI-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Display-Semibold.otf"; path = "../../../Downloads/SF-UI/SF-UI-Display-Semibold.otf"; sourceTree = "<group>"; };
+		4FF07D3B1E035FF9002AFFDE /* SF-UI-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Display-Thin.otf"; path = "../../../Downloads/SF-UI/SF-UI-Display-Thin.otf"; sourceTree = "<group>"; };
+		4FF07D3C1E035FF9002AFFDE /* SF-UI-Display-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Display-Ultralight.otf"; path = "../../../Downloads/SF-UI/SF-UI-Display-Ultralight.otf"; sourceTree = "<group>"; };
 		9039AC479379DB256C53E564 /* Pods-spawned.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spawned.debug.xcconfig"; path = "Pods/Target Support Files/Pods-spawned/Pods-spawned.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +110,7 @@
 		4F4625161DFEFA3E00C7A822 /* spawned */ = {
 			isa = PBXGroup;
 			children = (
+				4FF07D331E035FDB002AFFDE /* ressources */,
 				4FE0F3041DFF5E2900A66452 /* classes */,
 				4F46251B1DFEFA3F00C7A822 /* Main.storyboard */,
 				4F4625201DFEFA3F00C7A822 /* LaunchScreen.storyboard */,
@@ -177,6 +196,22 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		4FF07D331E035FDB002AFFDE /* ressources */ = {
+			isa = PBXGroup;
+			children = (
+				4FF07D341E035FF9002AFFDE /* SF-UI-Display-Black.otf */,
+				4FF07D351E035FF9002AFFDE /* SF-UI-Display-Bold.otf */,
+				4FF07D361E035FF9002AFFDE /* SF-UI-Display-Heavy.otf */,
+				4FF07D371E035FF9002AFFDE /* SF-UI-Display-Light.otf */,
+				4FF07D381E035FF9002AFFDE /* SF-UI-Display-Medium.otf */,
+				4FF07D391E035FF9002AFFDE /* SF-UI-Display-Regular.otf */,
+				4FF07D3A1E035FF9002AFFDE /* SF-UI-Display-Semibold.otf */,
+				4FF07D3B1E035FF9002AFFDE /* SF-UI-Display-Thin.otf */,
+				4FF07D3C1E035FF9002AFFDE /* SF-UI-Display-Ultralight.otf */,
+			);
+			name = ressources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -240,6 +275,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FF07D3D1E03602C002AFFDE /* SF-UI-Display-Black.otf in Resources */,
+				4FF07D3E1E03602C002AFFDE /* SF-UI-Display-Bold.otf in Resources */,
+				4FF07D3F1E03602C002AFFDE /* SF-UI-Display-Heavy.otf in Resources */,
+				4FF07D401E03602C002AFFDE /* SF-UI-Display-Light.otf in Resources */,
+				4FF07D411E03602C002AFFDE /* SF-UI-Display-Medium.otf in Resources */,
+				4FF07D421E03602C002AFFDE /* SF-UI-Display-Regular.otf in Resources */,
+				4FF07D431E03602C002AFFDE /* SF-UI-Display-Semibold.otf in Resources */,
+				4FF07D441E03602C002AFFDE /* SF-UI-Display-Thin.otf in Resources */,
+				4FF07D451E03602C002AFFDE /* SF-UI-Display-Ultralight.otf in Resources */,
 				4FBD54151E0000EF00D62BE2 /* Assetes.xcassets in Resources */,
 				4F4625221DFEFA3F00C7A822 /* LaunchScreen.storyboard in Resources */,
 				4F46251D1DFEFA3F00C7A822 /* Main.storyboard in Resources */,

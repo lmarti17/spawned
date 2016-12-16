@@ -27,7 +27,7 @@ class LandingViewController: UIViewController {
 
         if  stat?.isEmpty != nil {
             
-            self.performSegue(withIdentifier: ProfileViewController.segue_identifier, sender: nil)
+            self.performSegue(withIdentifier: "tabbarController_identifier", sender: nil)
         }
         
     }

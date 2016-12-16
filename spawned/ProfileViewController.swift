@@ -51,7 +51,12 @@ class ProfileViewController: UIViewController {
             userToken: userToken,
             success:{ (response) in
                 
-                self.gender.text = response["sex"].string
+                    
+                if response["sex"].string == "m" {
+                    self.gender.text = "Male"
+                } else {
+                    self.gender.text = "Female"
+                }
                 self.microStatus.text = response["mic"].string
                 self.country.text = response["country"].string
                 self.userName.text = response["username"].string
