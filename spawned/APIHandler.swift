@@ -112,7 +112,7 @@ struct APIHandler {
         
         print(params)
         
-        Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default).validate().responseJSON {
+        Alamofire.request(url, method: .post, parameters: params).validate().responseJSON {
             (reponse) in
             
             switch reponse.result {
@@ -123,8 +123,9 @@ struct APIHandler {
                     success(jsonData)
                 
                 case .failure(let error):
+                    
+                    print(error.localizedDescription.description)
                     failure(error.localizedDescription.description)
-                
             }
         }
         
@@ -219,7 +220,7 @@ struct APIHandler {
     // MARK: - Get games
     /////////////////////////////
     
-    static func searchGames(userToken: String) {
+    static func searchGames(userToken: String,  success: @escaping ((JSON) -> Void), failure: @escaping ((String) -> Void)) {
         
         let url = baseUrl + Path.searchGames.description
         
@@ -236,11 +237,13 @@ struct APIHandler {
             case .success(let value):
                 let jsonData = JSON(value)
                 print(jsonData)
+                success(jsonData)
                 
                 
             case .failure(let error):
-                print(error)
-                return
+                
+                failure(error.localizedDescription.description)
+        
             }
         }
     }

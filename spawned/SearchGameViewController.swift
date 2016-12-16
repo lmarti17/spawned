@@ -18,6 +18,7 @@ class SearchGameViewController: UIViewController, UICollectionViewDataSource, UI
     
     // MARK: - Class variables
     
+    var arrayOfGames = [Game]()
     
     // MARK: Life Cycle
     
@@ -44,9 +45,20 @@ class SearchGameViewController: UIViewController, UICollectionViewDataSource, UI
     
     private func getData() {
         
-        let userToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE0ODQzNTY3Nzl9.2oZZCFeolHNuCQIyV1MZYzxUjuJ4GyrX-sfSeNuWXuI"
+        let defaults =  UserDefaults.standard
+        let userToken: String!
+        userToken = defaults.string(forKey: "access_token")
             
-        APIHandler.searchGames(userToken: userToken)
+        APIHandler.searchGames(
+            userToken: userToken,
+            success: { (response) in
+                
+                print(response)
+            },
+            failure: { (error) in
+                
+                print(error)
+        })
     }
     
 
@@ -60,7 +72,7 @@ class SearchGameViewController: UIViewController, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return arrayOfGames.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

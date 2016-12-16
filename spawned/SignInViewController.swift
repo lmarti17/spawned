@@ -59,9 +59,9 @@ class SignInViewController: UITableViewController {
                     }, failure: { (error) in
 
                         // Handle error
-                        let alert = UIAlertController(title: "Error", message: "The login/password combination must be wrong", preferredStyle: UIAlertControllerStyle.alert)
-                        alert.addAction(UIAlertAction(title: "Try again", style: UIAlertActionStyle.default, handler: nil))
-                        self.present(alert, animated: true, completion: nil)
+//                        let alert = UIAlertController(title: "Error", message: "The login/password combination must be wrong", preferredStyle: UIAlertControllerStyle.alert)
+//                        alert.addAction(UIAlertAction(title: "Try again", style: UIAlertActionStyle.default, handler: nil))
+//                        self.present(alert, animated: true, completion: nil)
                     }
                 )
 

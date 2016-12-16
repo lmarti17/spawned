@@ -68,7 +68,7 @@ class SignUpViewController: UITableViewController {
 
     @IBAction func signUp(_ sender: Any) {
         
-        let password: String?
+        let password: String!
         let micStatus: String!
         
         if microBooleanValue.isOn {
@@ -76,6 +76,7 @@ class SignUpViewController: UITableViewController {
         } else {
             micStatus = "no"
         }
+        
         
         if passwordTextField.text == verificationPasswordTextField.text {
             password = passwordTextField.text
@@ -88,10 +89,14 @@ class SignUpViewController: UITableViewController {
             return
         }
         
+        
         // CALL the API
         
         if let userName = userNameTextField.text, let gender = genderTextField.text,
-            let country = countryTextField.text ,let email = mailTextField.text {
+            let country = countryTextField.text ,let email = mailTextField.text, let birthday = dateOfBirthTextField.text {
+            
+            
+            if !userName.isEmpty && !gender.isEmpty && !country.isEmpty && !password.isEmpty && !email.isEmpty && !micStatus.isEmpty && !birthday.isEmpty {
                 
                 
                 let params = [
@@ -101,12 +106,11 @@ class SignUpViewController: UITableViewController {
                     "password_confirmation": password!,
                     "sex": gender.lowercased(),
                     "mic": micStatus,
-                    "birthday": "14-12-2016",
+                    "birthday": birthday,
                     "country": country,
                     "register_secret": APIHandler.apiKey
                     ] as [String : Any]
-                
-                print(params)
+
                 
                 APIHandler.signUp(
                     param: params,
@@ -128,7 +132,6 @@ class SignUpViewController: UITableViewController {
                     self.present(alert, animated: true, completion: nil)
                 })
             }
-
+        }
     }
-
 }
