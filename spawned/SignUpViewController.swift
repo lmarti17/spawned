@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpViewController: UITableViewController {
+class SignUpViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     // MARK: - Outlets
     
@@ -22,9 +22,19 @@ class SignUpViewController: UITableViewController {
     @IBOutlet weak var verificationPasswordTextField: UITextField!
 
     
+    
+    // MARK: - Variables
+    
+    var pickOptions = ["Male", "Female"]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var pickerView = UIPickerView()
+        pickerView.delegate = self
+        
+        genderTextField.inputView = pickerView
 
         // Do any additional setup after loading the view.
     }
@@ -34,6 +44,24 @@ class SignUpViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // MARK: - Picker view handler
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickOptions.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickOptions[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        genderTextField.text = pickOptions[row]
+    }
     
 //    func datePickerValueChanged(sender:UIDatePicker) {
 //        
@@ -47,19 +75,17 @@ class SignUpViewController: UITableViewController {
 //        
 //    }
     
-    // MARK: - Set birthday Date Picker
-    
+//     MARK: - Set birthday Date Picker
+//    
 //    @IBAction func birthdayTextField(_ sender: UITextField) {
 //        
-//        let datePickerView:UIDatePicker = UIDatePicker()
+//        let datePicker = UIDatePicker()
 //        
-//        datePickerView.datePickerMode = UIDatePickerMode.date
+//        dateOfBirthTextField.inputView = datePicker
 //        
-//        sender.inputView = datePickerView
-//        
-//        datePickerView.addTarget(self, action: #selector(self.datePickerValueChanged), forControlEvents: UIControlEvents.ValueChanged)
+//        datePicker.addTarget(self, action: #selector(datePickerChanged(sender:)), for: .valueChanged)
 //    }
-    
+//    
     
 
     
@@ -70,11 +96,18 @@ class SignUpViewController: UITableViewController {
         
         let password: String!
         let micStatus: String!
+        let gender: String!
         
         if microBooleanValue.isOn {
             micStatus = "yes"
         } else {
             micStatus = "no"
+        }
+        
+        if genderTextField.text == "Female" {
+            gender = "f"
+        } else {
+            gender = "m"
         }
         
         
@@ -92,8 +125,7 @@ class SignUpViewController: UITableViewController {
         
         // CALL the API
         
-        if let userName = userNameTextField.text, let gender = genderTextField.text,
-            let country = countryTextField.text ,let email = mailTextField.text, let birthday = dateOfBirthTextField.text {
+        if let userName = userNameTextField.text, let country = countryTextField.text ,let email = mailTextField.text, let birthday = dateOfBirthTextField.text {
             
             
             if !userName.isEmpty && !gender.isEmpty && !country.isEmpty && !password.isEmpty && !email.isEmpty && !micStatus.isEmpty && !birthday.isEmpty {
